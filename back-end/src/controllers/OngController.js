@@ -25,6 +25,6 @@ module.exports = {
             city,
             uf,
         })
-        return response.json({ id, name, email, whatsapp, city, uf });
+        return response.status(201).json({ id, name, email, whatsapp, city, uf });
     }
 }
