@@ -1,5 +1,7 @@
 ## Comando para criar um projeto já no formato React - Web
 
+ - npm i  -g create-react-app
+
  - npx create-react-app <nome do projeto>
 
 
