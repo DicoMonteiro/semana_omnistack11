@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const { errors } = require("celebrate");
 const routes = require("./routes");
 
 //Biblioteca ou dependência Express é muito utilizado para rotas da nossa
@@ -10,7 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(routes);
+app.use(errors());
 
 //Porta na qual a aplicação vai ficar escutando para executar
 // nosso projeto
-app.listen(3333);
+module.exports = app;
+

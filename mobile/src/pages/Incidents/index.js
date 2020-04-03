@@ -68,6 +68,7 @@ export default function Incidents() {
           data={incidents}
           style={styles.incidentList}
           keyExtractor={incident => String(incident.id)}
+          // Esse comendo serve para controlar o numero de registro a serem apresentados na página e ir aumentando a exibição conforme o usuario for descendo o scroll
           // showsHorizontalScrollIndicator={false}
           onEndReached={loadIncidents}
           onEndReachedThreshold={0.2}

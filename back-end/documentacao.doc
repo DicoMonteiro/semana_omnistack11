@@ -1,0 +1,159 @@
+## Entendo o que é HTML
+## Entendo o que é CSS
+## Entendo o que é JavaScript
+
+
+## npm install nodemon - Serve para deixar a aplicação do servidor em pé, sem a necessidade de estar executando de novo após uma alteração
+
+npm install -g nodemon
+
+npm install --save-dev nodemon
+
+npm config get prefix
+
+set PATH=%PATH%;C:\Users\"Aqui seu usuario"\AppData\Roaming\npm;
+
+nodemon serverjs
+
+- Executar:
+
+npm run dev
+
+##Utilizando a extensão de Live Server para atulizar as alteracoes no página sem precisar ficar dando refresh.
+
+
+
+## Instalando a biblioteca NUNJUCKS - Biblioteca que facilita a comunicação entre vários arquivos HTML e variáveis entre elas, bem como comuncando com a biblioteca EXPRESS, com suas chamadas
+
+npm i nunjucks
+
+## Instalando o bando de dados local SQLite3
+
+npm i sqlite3
+
+
+## Os dados de nomenclatura na base de dados tem que ser iguais a da aplicação e vice-versa
+
+
+
+## Utilizando a biblioteca KNEX para ajudar na instalação e configuração do nosso banco de dados a ser utilizado
+
+## http://knexjs.org/
+
+## Installation
+
+Node.js
+The primary target environment for Knex is Node.js, you will need to install the knex library, and then install the appropriate database library: pg for PostgreSQL and Amazon Redshift, mysql for MySQL or MariaDB, sqlite3 for SQLite3, or mssql for MSSQL.
+
+$ npm install knex --save
+
+# Then add one of the following (adding a --save) flag:
+$ npm install pg
+$ npm install sqlite3
+$ npm install mysql
+$ npm install mysql2
+$ npm install oracledb
+$ npm install mssql
+
+
+## Utilizando o comando NPX e não NPM para configurar o banco de dados, o NPX serve para executar um pacote
+
+npx knex init
+
+## Após criar o arquivo, knexfile.js, na qual irá ficar toda a configuração do bando de dados
+
+
+## Verificar quais são as ENTIDADES e FUNCIONALIDADES 
+
+## ENTIDADES
+
+- ONG
+- Caso (Incident)
+
+## FUNCIONALIDADES
+
+- Login da ONG
+- Logout da ONG
+- Cadastro da ONG
+- Cadastro de novos Casos
+- Deletar casos
+- Listar casos específicos por ONG
+- Listar todos os casos
+- Entrar em contato com a ONG
+
+
+## Criando uma migrations, que nada mais é do que um registro de log (histórico) de tudo que ocorre dentro da aplicação (criaçao de tabela, de dados, alterações, exclusão, etc)
+
+npx knex migrate:make create_ongs
+
+## Após as configurações para criação de tabelas, etc no arquivo criado anterior, executar para criar a mesma
+
+npx knex migrate:latest
+
+## Após a criação do banco de dados da ONGS, vamos criar a base de dados dos Incidentes
+
+npx knex migrate:make create_incidents
+
+## Após criar nova tabela de Incidentes, executar para criar
+
+npx knex migrate:latest
+
+## OBS: se por ventura na criacao das bases de dados der algum problema, executar o comando para retornar
+
+npx knex migrate:rollback
+
+
+## Para verificar quais execucoes feitas na migration
+
+npx knex migrate:status
+
+
+## Criando a pasta controllers para ter o controle de toda a parte lógica a ser consumida pelas requisições solicitadas e no arquivo "router.js" somente vai ser chamado a referência sobre a requisição, por exemplo, pra rota "post", vai ser chamado o método "create" do arquivo OngController e para a rota "get", o método "get_all" do arquivo OngController
+
+controllers/OngController.js
+
+
+## Instalando a biblioteca CORS que vai controlar quem vai poder acessar a aplicação, medida de segurança
+
+npm i cors
+
+
+## Instalando a biblioteca CELEBRATE (Contem a juncao de Express e @hapi/joi) para cobertura de Validações de testes unitários ou não
+
+npm i celebrate
+
+
+## Instalando a biblioteca JEST para testes unitários (TDD)
+
+npm i jest
+
+npx jest --init
+
+{Configurar ele para colocar "test" no package.json, ser feito pelo "node"}
+
+
+## Criando os testes na pasta Tests e criando pasta generica para manter os arquivos genericos usados na aplicacao
+
+executar os testes:
+
+npm test
+
+
+## Configurando o banco de dados para tests no knexfile e instalando a biblioteca para nos permitir abre conexoes em bancos de dados diferentes
+
+npm i cross-env
+
+
+## Para Testes de Integração, usando a biblioteca SUPERTEST
+
+npm i supertest -D
+
+
+
+
+##  Para Deploy de pequenos projetos utilizar o HEROKU e para grandes projetos escaláveis o DIGITALOCEAN ou NETLIFY(FORNT-END)
+
+
+
+
+## O que estudar pra frente: Padrões de Código - ESLint , Prettier : Autenticação JWT : Styled Components
